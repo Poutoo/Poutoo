@@ -9,7 +9,8 @@
 ---
 
 ### 💫 About Me
-Developer Full Stack & Designer, 20 years old.
+
+> Hey there! I'm **Poutoo**, a developer with a deep passion for tech. I'm here to build your dreams and bring innovations to life! :D
 
 ---
 
@@ -49,3 +50,5 @@ Developer Full Stack & Designer, 20 years old.
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=Poutoo&color=FF5F6D&style=for-the-badge&label=PROFILE+VIEWS" />
 </p>
+
+![Header](https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=FF5F6D,FFC371&height=120&section=footer)
