@@ -10,20 +10,45 @@
 
 ### 💫 About Me
 
-> Hey there! I'm **Poutoo**, a developer with a deep passion for tech. I'm here to build your dreams and bring innovations to life! :D
+> Hey there! I'm **Poutoo**, a 20-year-old **full-stack developer** currently doing an apprenticeship. I'm passionate about technological advancements and creativity! :D
+
+- 🏢 I currently work as a web developer in [Houlès Paris](https://www.houles.com/).
+- 🚀 Exploring the safety and performance of **Rust**.
+- 🎨 Deeply interested in **UI/UX Design** and sleek animations.
+- 💬 Let's talk about tech, innovation, or your next big project!
 
 ---
 
 ### 💻 Tech Stack
 
 #### 🎨 Frontend & Design
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=html,css,js,react,nextjs,tailwind,angular,figma,vite,sass" />
+</p>
 
 #### ⚙️ Backend & Languages
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![Kotlin](https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=ts,nodejs,py,django,php,java,kotlin,symfony" />
+  </p>
 
-#### 🗄️ Database & Cloud
-![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+#### 🗄️ Database & Automation
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=postgres,mysql,supabase,mongodb,docker,vercel" />
+  <img src="https://cdn.simpleicons.org/n8n/FF6C37" height="48" style="vertical-align: middle; margin-left: 5px;" title="n8n" />
+</p>
+
+#### 🛠️ Tools & DevOps
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=notion,git,github,gitlab,vscode,phpstorm,androidstudio,bash,redis" />
+  <img src="https://cdn.simpleicons.org/claude/D97757" height="44" style="vertical-align: middle; margin-left: 5px;" title="Claude" />
+  <img src="https://cdn.simpleicons.org/googlegemini/8E75B2" height="44" style="vertical-align: middle; margin-left: 5px;" title="Gemini" />
+</p>
+
+#### 📚 Currently Learning
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=rust,kali" />
+  <img src="https://cdn.simpleicons.org/zedindustries/084CCF" height="44" style="vertical-align: middle; margin-left: 5px;" title="Zed" />
+</p>
 
 ---
 
