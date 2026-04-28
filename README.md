@@ -10,9 +10,9 @@
 
 ### 💫 About Me
 
-> Hey there! I'm **Poutoo**, a 20-year-old **full-stack developer** currently doing an apprenticeship. I'm passionate about technological advancements and creativity! :D
+> Hey there! I'm **Poutoo**, a 20-year-old **full-stack developer**. I'm passionate about technological advancements and creativity! :D
 
-- 🏢 I currently work as a web developer in [Houlès Paris](https://www.houles.com/).
+- 🏢 I currently work as a web developer in [secret].
 - 🚀 Exploring the safety and performance of **Rust**.
 - 🎨 Deeply interested in **UI/UX Design** and sleek animations.
 - 💬 Let's talk about tech, innovation, or your next big project!
