@@ -28,7 +28,7 @@
 
 #### ⚙️ Backend & Languages
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=ts,nodejs,py,django,php,java,kotlin,symfony" />
+  <img src="https://skillicons.dev/icons?i=ts,nodejs,py,django,php,kotlin" />
   </p>
 
 #### 🗄️ Database & Automation
