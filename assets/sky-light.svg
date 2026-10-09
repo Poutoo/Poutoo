@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-labelledby="title desc">
   <title id="title">Poutoo, star chart of projects</title>
-  <desc id="desc">A constellation where each star is one of Poutoo's projects: Canopus and Vega.</desc>
+  <desc id="desc">A constellation where each star is one of Poutoo's projects: Canopus, Vega and poutoo.dev.</desc>
   <defs></defs>
   <style>
     .twinkle { animation: twinkle 4s ease-in-out infinite; }
@@ -212,7 +212,8 @@
 
   <g stroke="#1d3461" stroke-opacity="0.6" stroke-width="1.2" fill="none">
     <line x1="470.9" y1="276.5" x2="730.4" y2="137.8" stroke-dasharray="294.3" stroke-dashoffset="294.3" class="draw" style="animation-delay:0.3s" />
-    <line x1="736.2" y1="144.0" x2="610.1" y2="343.9" stroke-dasharray="236.4" stroke-dashoffset="236.4" class="draw" style="animation-delay:0.8s" />
+    <line x1="471.0" y1="293.3" x2="583.1" y2="351.3" stroke-dasharray="126.2" stroke-dashoffset="126.2" class="draw" style="animation-delay:0.8s" />
+    <line x1="755.0" y1="143.1" x2="881.5" y2="308.9" stroke-dasharray="3 6" class="fadein" style="animation-delay:2.4000000000000004s" />
   </g>
 
   <g>
@@ -233,7 +234,8 @@
     <text x="770.5" y="137" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="22" fill="#13213f">Vega</text>
     <text x="770.5" y="159" text-anchor="start" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#2c3d63">Universal CLI video</text>
     <text x="770.5" y="177" text-anchor="start" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#2c3d63">and music downloader</text>
-    <text x="628" y="367" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="22" fill="#13213f">Portfolio</text>
+    <text x="628" y="343" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#6b7894">α Canis Majoris</text>
+    <text x="628" y="367" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="22" fill="#13213f">poutoo.dev</text>
     <text x="628" y="389" text-anchor="start" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#2c3d63">This website</text>
     <text x="628" y="407" text-anchor="start" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#2c3d63">built with next.js and Tailwind</text>
     <text x="867" y="327" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-style="normal" font-size="22" fill="#6b7894">Next star</text>
