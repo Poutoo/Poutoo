@@ -42,7 +42,7 @@ PROJECTS = [
     dict(name="Vega", designation="α Lyrae", repo="Poutoo/Vega", x=745, y=130, r=7.5,
          desc=["Universal CLI video", "and music downloader"],
          label="right", tint="cool"),
-    dict(name="Portfolio", designation="", repo="Poutoo/poutoo.dev", x=600, y=360, r=10,
+    dict(name="poutoo.dev", designation="α Canis Majoris", repo="Poutoo/poutoo.dev", x=600, y=360, r=10,
          desc=["This website", "built with next.js and Tailwind"],
          label="right", tint="warm"),
     dict(name="Next star", designation="", x=890, y=320, r=5,
@@ -50,7 +50,7 @@ PROJECTS = [
 ]
 
 # Tracés de la constellation : paires d'index dans PROJECTS
-LINKS = [(0, 1), (1, 2)]
+LINKS = [(0, 1), (0, 2), (1, 3)]
 
 THEMES = {
     "dark": dict(
@@ -214,6 +214,11 @@ def legend_svg(t):
     return "\n    ".join(parts)
 
 
+def charted_names():
+    names = [p["name"] for p in PROJECTS if not p.get("ghost")]
+    return ", ".join(names[:-1]) + " and " + names[-1]
+
+
 def label_svg(p, t):
     left = p["label"] == "left"
     anchor = "end" if left else "start"
@@ -273,7 +278,7 @@ def build(theme, levels):
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-labelledby="title desc">
   <title id="title">Poutoo, star chart of projects</title>
-  <desc id="desc">A constellation where each star is one of Poutoo's projects: Canopus and Vega.</desc>
+  <desc id="desc">A constellation where each star is one of Poutoo's projects: {charted_names()}.</desc>
   <defs>{glow_defs}</defs>
   <style>
     .twinkle {{ animation: twinkle 4s ease-in-out infinite; }}

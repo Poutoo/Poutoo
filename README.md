@@ -1,7 +1,7 @@
 <a href="https://poutoo.dev">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/sky-dark.svg">
-    <img src="./assets/sky-light.svg" alt="Poutoo, star chart of projects: Canopus and Vega" width="100%">
+    <img src="./assets/sky-light.svg" alt="Poutoo, star chart of projects: Canopus, Vega and Sirius" width="100%">
   </picture>
 </a>
 
