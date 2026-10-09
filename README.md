@@ -13,31 +13,30 @@
 
 #### 🎨 Frontend & Design
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=html,css,js,react,nextjs,tailwind,angular,figma,vite,sass" />
+  <img src="https://skillicons.dev/icons?i=html,css,js,react,nextjs,tailwind,angular,figma,vite,vue" />
 </p>
 
 #### ⚙️ Backend & Languages
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=ts,nodejs,py,django,php,kotlin" />
+  <img src="https://skillicons.dev/icons?i=cs,ts,nodejs,py,php,kotlin,nestjs" />
   </p>
 
 #### 🗄️ Database & Automation
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=postgres,mysql,supabase,mongodb,docker,vercel" />
+  <img src="https://skillicons.dev/icons?i=postgres,mysql,docker" />
   <img src="https://cdn.simpleicons.org/n8n/FF6C37" height="48" style="vertical-align: middle; margin-left: 5px;" title="n8n" />
 </p>
 
 #### 🛠️ Tools & DevOps
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=notion,git,github,gitlab,vscode,phpstorm,androidstudio,bash,redis" />
+  <img src="https://skillicons.dev/icons?i=notion,git,github,gitlab,vscode,phpstorm,androidstudio,bash,redis,nix,nginx" />
   <img src="https://cdn.simpleicons.org/zedindustries/084CCF" height="44" style="vertical-align: middle; margin-left: 5px;" title="Zed" />
   <img src="https://cdn.simpleicons.org/claude/D97757" height="44" style="vertical-align: middle; margin-left: 5px;" title="Claude" />
-  <img src="https://cdn.simpleicons.org/googlegemini/8E75B2" height="44" style="vertical-align: middle; margin-left: 5px;" title="Gemini" />
 </p>
 
 #### 📚 Currently Learning
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=rust,kali,lua" />
+  <img src="https://skillicons.dev/icons?i=rust,lua" />
 </p>
 
 
