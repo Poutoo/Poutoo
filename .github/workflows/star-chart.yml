@@ -24,7 +24,8 @@ jobs:
       - name: Generate star chart
         run: python3 generate.py
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # le GITHUB_TOKEN d'Actions ne voit que ce repo : un PAT est requis pour lire les repos privés
+          GITHUB_TOKEN: ${{ secrets.STAR_CHART_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Commit if changed
         run: |
