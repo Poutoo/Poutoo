@@ -171,8 +171,7 @@ def link_path(a, b):
 
 
 # effet de chaque palier : (échelle du noyau, opacité du halo)
-LEVEL_FX = [(0.6, 0.12), (0.75, 0.28), (0.9, 0.45), (1.0, 0.62)]
-
+LEVEL_FX = [(0.45, 0.0), (0.6, 0.15), (0.8, 0.35), (1.0, 0.7)]
 
 def star_svg(p, t, i, lvl):
     x, y = p["x"], p["y"]
@@ -184,16 +183,16 @@ def star_svg(p, t, i, lvl):
     color = t[p.get("tint", "cool")]
     out = []
     if t["glow"]:
-        out.append(f'<circle cx="{x}" cy="{y}" r="{p["r"] * 4.2}" fill="url(#glow-{i})" '
-                   f'class="breathe d{i % 3}" />')
-        if lvl >= 2:  # aigrettes de diffraction, seulement pour les étoiles vives
+        if lvl >= 1:  # pas de halo pour un projet dormant
+            out.append(f'<circle cx="{x}" cy="{y}" r="{p["r"] * (2 + lvl * 1.1)}" fill="url(#glow-{i})" '
+                       f'class="breathe d{i % 3}" />')
+        if lvl == 3:
             s = r * 3.1
             out.append(f'<path d="M{x - s} {y}H{x + s}M{x} {y - s}V{y + s}" stroke="{color}" '
                        f'stroke-opacity="0.45" stroke-width="0.8" />')
-    elif lvl >= 2:
-        # sur une carte imprimée, les étoiles brillantes ont un anneau
+    elif lvl == 3:
         out.append(f'<circle cx="{x}" cy="{y}" r="{r + 4}" fill="none" stroke="{color}" stroke-width="0.8" />')
-    out.append(f'<circle cx="{x}" cy="{y}" r="{r}" fill="{color}" />')
+    out.append(f'<circle cx="{x}" cy="{y}" r="{r}" fill="{color}" />')  # noyau de l'étoile
     return "\n    ".join(out)
 
 
