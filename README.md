@@ -8,7 +8,7 @@
 | Star | Project | Stack |
 |---|---|---|
 | ✦ [**Canopus**](https://github.com/Poutoo/Canopus) | Windows game optimizer, work in progress | WinUI 3, .NET 8 |
-| ✦ [**Vega**](https://github.com/Poutoo/Vega) | Universal CLI video and music downloader | Py |
+| ✦ [**Vega**](https://github.com/Poutoo/Vega) | Universal CLI video and music downloader | |
 
 <details>
 <summary><b>Tech stack</b></summary>

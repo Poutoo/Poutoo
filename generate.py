@@ -5,10 +5,23 @@ Pour ajouter un projet : ajoute une entrée dans PROJECTS, puis relance
     python generate.py
 Les étoiles de fond sont tirées avec une graine fixe : la carte reste
 identique d'une génération à l'autre tant que tu ne changes pas SEED.
+
+Éclat des étoiles : pour chaque projet qui a un champ "repo", le script lit
+la date du dernier push via l'API GitHub. Plus le repo a bougé récemment,
+plus l'étoile brille. L'activité est rangée en 4 paliers pour que le SVG
+ne change (et ne soit commité) que quand un projet change de palier.
+
+    python generate.py            # interroge l'API (GITHUB_TOKEN optionnel en local)
+    python generate.py --offline  # éclat par défaut, sans réseau
 """
 
+import json
 import math
+import os
 import random
+import sys
+import urllib.request
+from datetime import datetime, timezone
 from pathlib import Path
 
 W, H = 1000, 420
@@ -20,12 +33,13 @@ OUT = Path(__file__).parent / "assets"
 # r          : rayon de l'étoile (= importance du projet)
 # label      : "left" ou "right", côté où s'affiche le texte
 # designation: désignation de Bayer de la vraie étoile (laisser "" si aucune)
+# repo       : "owner/nom" sur GitHub, sert à calculer l'éclat (optionnel)
 # ghost      : True = projet à venir (étoile en pointillés)
 PROJECTS = [
-    dict(name="Canopus", designation="α Carinae", x=455, y=285, r=9,
+    dict(name="Canopus", designation="α Carinae", repo="Poutoo/Canopus", x=455, y=285, r=9,
          desc=["Windows game optimizer", "WinUI 3, .NET 8, work in progress"],
          label="left", tint="warm"),
-    dict(name="Vega", designation="α Lyrae", x=745, y=130, r=7.5,
+    dict(name="Vega", designation="α Lyrae", repo="Poutoo/Vega", x=745, y=130, r=7.5,
          desc=["Universal CLI video", "and music downloader"],
          label="right", tint="cool"),
     dict(name="Next star", designation="", x=890, y=320, r=5,
@@ -62,11 +76,52 @@ SERIF = "Georgia, 'Times New Roman', serif"
 SANS = "-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif"
 
 
+# --- Activité des repos -------------------------------------------------------
+# palier : (jours max depuis le dernier push, libellé de la légende)
+LEVELS = [(None, "dormant"), (120, "quiet"), (30, "this month"), (7, "this week")]
+DEFAULT_LEVEL = 2  # projets sans repo, ou mode --offline
+
+
+def level_from_days(days):
+    for lvl in range(len(LEVELS) - 1, 0, -1):
+        if days <= LEVELS[lvl][0]:
+            return lvl
+    return 0
+
+
+def fetch_levels(strict):
+    """Renvoie {index_projet: palier}. En CI (strict), une erreur fait échouer
+    le job : mieux vaut ne rien commiter qu'une carte éteinte à tort."""
+    token = os.environ.get("GITHUB_TOKEN")
+    now = datetime.now(timezone.utc)
+    levels = {}
+    for i, p in enumerate(PROJECTS):
+        if not p.get("repo"):
+            continue
+        req = urllib.request.Request(
+            f"https://api.github.com/repos/{p['repo']}",
+            headers={"Accept": "application/vnd.github+json",
+                     "User-Agent": "poutoo-star-chart",
+                     **({"Authorization": f"Bearer {token}"} if token else {})})
+        try:
+            with urllib.request.urlopen(req, timeout=15) as r:
+                data = json.load(r)
+            pushed = datetime.fromisoformat(data["pushed_at"].replace("Z", "+00:00"))
+            days = (now - pushed).days
+            levels[i] = level_from_days(days)
+            print(f"{p['repo']}: dernier push il y a {days} j -> palier {levels[i]}")
+        except Exception as e:
+            if strict:
+                sys.exit(f"Impossible de lire {p['repo']} : {e}")
+            print(f"{p['repo']}: API indisponible ({e}), palier par défaut")
+    return levels
+
+
 # --- Étoiles de fond ---------------------------------------------------------
 def field_stars():
     rng = random.Random(SEED)
     # zones à garder lisibles : titre + textes des projets
-    keep_out = [(30, 30, 330, 150)]
+    keep_out = [(30, 30, 330, 150), (30, 362, 400, 410)]  # titre, légende
     for p in PROJECTS:
         if p["label"] == "left":
             keep_out.append((p["x"] - 260, p["y"] - 50, p["x"] + 20, p["y"] + 60))
@@ -115,24 +170,46 @@ def link_path(a, b):
     return x1, y1, x2, y2, d - ga - gb
 
 
-def star_svg(p, t, i):
-    x, y, r = p["x"], p["y"], p["r"]
+# effet de chaque palier : (échelle du noyau, opacité du halo)
+LEVEL_FX = [(0.6, 0.12), (0.75, 0.28), (0.9, 0.45), (1.0, 0.62)]
+
+
+def star_svg(p, t, i, lvl):
+    x, y = p["x"], p["y"]
     if p.get("ghost"):
-        return (f'<circle cx="{x}" cy="{y}" r="{r + 3}" fill="none" stroke="{t["ghost"]}" '
+        return (f'<circle cx="{x}" cy="{y}" r="{p["r"] + 3}" fill="none" stroke="{t["ghost"]}" '
                 f'stroke-width="1.2" stroke-dasharray="2 3" class="pulse" />')
+    scale, _ = LEVEL_FX[lvl]
+    r = round(p["r"] * scale, 2)
     color = t[p.get("tint", "cool")]
     out = []
     if t["glow"]:
-        out.append(f'<circle cx="{x}" cy="{y}" r="{r * 4.2}" fill="url(#glow-{p.get("tint", "cool")})" '
+        out.append(f'<circle cx="{x}" cy="{y}" r="{p["r"] * 4.2}" fill="url(#glow-{i})" '
                    f'class="breathe d{i % 3}" />')
-        s = r * 3.1  # aigrettes de diffraction
-        out.append(f'<path d="M{x - s} {y}H{x + s}M{x} {y - s}V{y + s}" stroke="{color}" '
-                   f'stroke-opacity="0.45" stroke-width="0.8" />')
-    else:
+        if lvl >= 2:  # aigrettes de diffraction, seulement pour les étoiles vives
+            s = r * 3.1
+            out.append(f'<path d="M{x - s} {y}H{x + s}M{x} {y - s}V{y + s}" stroke="{color}" '
+                       f'stroke-opacity="0.45" stroke-width="0.8" />')
+    elif lvl >= 2:
         # sur une carte imprimée, les étoiles brillantes ont un anneau
         out.append(f'<circle cx="{x}" cy="{y}" r="{r + 4}" fill="none" stroke="{color}" stroke-width="0.8" />')
     out.append(f'<circle cx="{x}" cy="{y}" r="{r}" fill="{color}" />')
     return "\n    ".join(out)
+
+
+def legend_svg(t):
+    """Légende façon atlas : l'éclat d'une étoile = activité récente."""
+    x0, y = 50, 392
+    parts = [f'<text x="{x0}" y="{y + 4}" font-family="{SANS}" font-size="12" '
+             f'fill="{t["muted"]}">Last push</text>']
+    x = x0 + 70
+    for lvl in range(len(LEVELS) - 1, -1, -1):
+        r = round(5 * LEVEL_FX[lvl][0], 2)
+        parts.append(f'<circle cx="{x}" cy="{y}" r="{r}" fill="{t["text"]}" />')
+        parts.append(f'<text x="{x + 10}" y="{y + 4}" font-family="{SANS}" font-size="12" '
+                     f'fill="{t["muted"]}">{LEVELS[lvl][1]}</text>')
+        x += 22 + len(LEVELS[lvl][1]) * 6.4
+    return "\n    ".join(parts)
 
 
 def label_svg(p, t):
@@ -155,8 +232,9 @@ def label_svg(p, t):
     return "\n    ".join(rows)
 
 
-def build(theme):
+def build(theme, levels):
     t = THEMES[theme]
+    lv = [levels.get(i, DEFAULT_LEVEL) for i in range(len(PROJECTS))]
     stars = field_stars()
 
     field = []
@@ -178,16 +256,18 @@ def build(theme):
                          f'stroke-dasharray="{length:.1f}" stroke-dashoffset="{length:.1f}" '
                          f'class="draw" style="animation-delay:{0.3 + n * 0.5}s" />')
 
-    main = "\n    ".join(star_svg(p, t, i) for i, p in enumerate(PROJECTS))
+    main = "\n    ".join(star_svg(p, t, i, lv[i]) for i, p in enumerate(PROJECTS))
     labels = "\n    ".join(label_svg(p, t) for p in PROJECTS)
 
     glow_defs = ""
     if t["glow"]:
-        glow_defs = "".join(
-            f'<radialGradient id="glow-{k}"><stop offset="0" stop-color="{t[k]}" stop-opacity="0.55"/>'
-            f'<stop offset="0.35" stop-color="{t[k]}" stop-opacity="0.12"/>'
-            f'<stop offset="1" stop-color="{t[k]}" stop-opacity="0"/></radialGradient>'
-            for k in ("warm", "cool"))
+        for i, p in enumerate(PROJECTS):
+            if p.get("ghost"):
+                continue
+            c, op = t[p.get("tint", "cool")], LEVEL_FX[lv[i]][1]
+            glow_defs += (f'<radialGradient id="glow-{i}"><stop offset="0" stop-color="{c}" stop-opacity="{op}"/>'
+                          f'<stop offset="0.35" stop-color="{c}" stop-opacity="{op * 0.22:.3f}"/>'
+                          f'<stop offset="1" stop-color="{c}" stop-opacity="0"/></radialGradient>')
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-labelledby="title desc">
   <title id="title">Poutoo, star chart of projects</title>
@@ -236,12 +316,19 @@ def build(theme):
     <text x="50" y="122" font-family="{SANS}" font-size="14" fill="{t["text"]}">Full-stack developer and designer.</text>
     <text x="50" y="142" font-family="{SANS}" font-size="14" fill="{t["muted"]}">Each star is a project I built.</text>
   </g>
+
+  <g>
+    {legend_svg(t)}
+  </g>
 </svg>
 '''
 
 
 if __name__ == "__main__":
+    offline = "--offline" in sys.argv
+    strict = os.environ.get("GITHUB_ACTIONS") == "true"
+    levels = {} if offline else fetch_levels(strict)
     OUT.mkdir(exist_ok=True)
     for theme in THEMES:
-        (OUT / f"sky-{theme}.svg").write_text(build(theme), encoding="utf-8")
+        (OUT / f"sky-{theme}.svg").write_text(build(theme, levels), encoding="utf-8")
         print(f"assets/sky-{theme}.svg")

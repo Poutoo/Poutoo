@@ -1,0 +1,39 @@
+name: Update star chart
+
+on:
+  schedule:
+    - cron: "17 4 * * *"   # tous les jours à 04:17 UTC
+  workflow_dispatch:         # bouton "Run workflow" dans l'onglet Actions
+  push:
+    paths:
+      - generate.py          # régénère quand tu modifies la carte
+
+permissions:
+  contents: write            # nécessaire pour commiter les SVG
+
+concurrency:
+  group: star-chart
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate star chart
+        run: python3 generate.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          if git diff --staged --quiet; then
+            echo "Aucun changement de palier, rien à commiter."
+          else
+            git commit -m "chore: update star chart"
+            git push
+          fi
