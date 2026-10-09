@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-labelledby="title desc">
   <title id="title">Poutoo, star chart of projects</title>
   <desc id="desc">A constellation where each star is one of Poutoo's projects: Canopus and Vega.</desc>
-  <defs><radialGradient id="glow-0"><stop offset="0" stop-color="#ffe7c2" stop-opacity="0.45"/><stop offset="0.35" stop-color="#ffe7c2" stop-opacity="0.099"/><stop offset="1" stop-color="#ffe7c2" stop-opacity="0"/></radialGradient><radialGradient id="glow-1"><stop offset="0" stop-color="#cfe0ff" stop-opacity="0.45"/><stop offset="0.35" stop-color="#cfe0ff" stop-opacity="0.099"/><stop offset="1" stop-color="#cfe0ff" stop-opacity="0"/></radialGradient></defs>
+  <defs><radialGradient id="glow-0"><stop offset="0" stop-color="#ffe7c2" stop-opacity="0.62"/><stop offset="0.35" stop-color="#ffe7c2" stop-opacity="0.136"/><stop offset="1" stop-color="#ffe7c2" stop-opacity="0"/></radialGradient><radialGradient id="glow-1"><stop offset="0" stop-color="#cfe0ff" stop-opacity="0.28"/><stop offset="0.35" stop-color="#cfe0ff" stop-opacity="0.062"/><stop offset="1" stop-color="#cfe0ff" stop-opacity="0"/></radialGradient></defs>
   <style>
     .twinkle { animation: twinkle 4s ease-in-out infinite; }
     .breathe { animation: breathe 5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
@@ -217,11 +217,10 @@
 
   <g>
     <circle cx="455" cy="285" r="37.800000000000004" fill="url(#glow-0)" class="breathe d0" />
-    <path d="M429.89 285H480.11M455 259.89V310.11" stroke="#ffe7c2" stroke-opacity="0.45" stroke-width="0.8" />
-    <circle cx="455" cy="285" r="8.1" fill="#ffe7c2" />
+    <path d="M427.1 285H482.9M455 257.1V312.9" stroke="#ffe7c2" stroke-opacity="0.45" stroke-width="0.8" />
+    <circle cx="455" cy="285" r="9.0" fill="#ffe7c2" />
     <circle cx="745" cy="130" r="31.5" fill="url(#glow-1)" class="breathe d1" />
-    <path d="M724.075 130H765.925M745 109.075V150.925" stroke="#cfe0ff" stroke-opacity="0.45" stroke-width="0.8" />
-    <circle cx="745" cy="130" r="6.75" fill="#cfe0ff" />
+    <circle cx="745" cy="130" r="5.62" fill="#cfe0ff" />
     <circle cx="890" cy="320" r="8" fill="none" stroke="#7d89a6" stroke-width="1.2" stroke-dasharray="2 3" class="pulse" />
   </g>
 

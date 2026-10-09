@@ -216,10 +216,9 @@
   </g>
 
   <g>
-    <circle cx="455" cy="285" r="12.1" fill="none" stroke="#13213f" stroke-width="0.8" />
-    <circle cx="455" cy="285" r="8.1" fill="#13213f" />
-    <circle cx="745" cy="130" r="10.75" fill="none" stroke="#13213f" stroke-width="0.8" />
-    <circle cx="745" cy="130" r="6.75" fill="#13213f" />
+    <circle cx="455" cy="285" r="13.0" fill="none" stroke="#13213f" stroke-width="0.8" />
+    <circle cx="455" cy="285" r="9.0" fill="#13213f" />
+    <circle cx="745" cy="130" r="5.62" fill="#13213f" />
     <circle cx="890" cy="320" r="8" fill="none" stroke="#8a95ad" stroke-width="1.2" stroke-dasharray="2 3" class="pulse" />
   </g>
 
