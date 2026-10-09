@@ -7,8 +7,9 @@
 
 | Star | Project | Stack |
 |---|---|---|
+ ✦ [**poutoo.dev**](https://poutoo.dev) | My personal website, go check :3 | Next.js, Tailwind |
 | ✦ [**Canopus**](https://github.com/Poutoo/Canopus) | Windows game optimizer, work in progress | WinUI 3, .NET 8 |
-| ✦ [**Vega**](https://github.com/Poutoo/Vega) | Universal CLI video and music downloader | |
+| ✦ [**Vega**](https://github.com/Poutoo/Vega) | Universal CLI video and music downloader | Python |
 
 <details>
 <summary><b>Tech stack</b></summary>

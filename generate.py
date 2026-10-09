@@ -42,6 +42,9 @@ PROJECTS = [
     dict(name="Vega", designation="α Lyrae", repo="Poutoo/Vega", x=745, y=130, r=7.5,
          desc=["Universal CLI video", "and music downloader"],
          label="right", tint="cool"),
+    dict(name="Portfolio", designation="", repo="Poutoo/poutoo.dev", x=600, y=360, r=10,
+         desc=["This website", "built with next.js and Tailwind"],
+         label="right", tint="warm"),
     dict(name="Next star", designation="", x=890, y=320, r=5,
          desc=["Being charted"], label="left", ghost=True),
 ]
