@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-labelledby="title desc">
   <title id="title">Poutoo, star chart of projects</title>
   <desc id="desc">A constellation where each star is one of Poutoo's projects: Canopus and Vega.</desc>
-  <defs><radialGradient id="glow-0"><stop offset="0" stop-color="#ffe7c2" stop-opacity="0.62"/><stop offset="0.35" stop-color="#ffe7c2" stop-opacity="0.136"/><stop offset="1" stop-color="#ffe7c2" stop-opacity="0"/></radialGradient><radialGradient id="glow-1"><stop offset="0" stop-color="#cfe0ff" stop-opacity="0.28"/><stop offset="0.35" stop-color="#cfe0ff" stop-opacity="0.062"/><stop offset="1" stop-color="#cfe0ff" stop-opacity="0"/></radialGradient></defs>
+  <defs><radialGradient id="glow-0"><stop offset="0" stop-color="#ffe7c2" stop-opacity="0.7"/><stop offset="0.35" stop-color="#ffe7c2" stop-opacity="0.154"/><stop offset="1" stop-color="#ffe7c2" stop-opacity="0"/></radialGradient><radialGradient id="glow-1"><stop offset="0" stop-color="#cfe0ff" stop-opacity="0.15"/><stop offset="0.35" stop-color="#cfe0ff" stop-opacity="0.033"/><stop offset="1" stop-color="#cfe0ff" stop-opacity="0"/></radialGradient></defs>
   <style>
     .twinkle { animation: twinkle 4s ease-in-out infinite; }
     .breathe { animation: breathe 5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
@@ -216,11 +216,11 @@
   </g>
 
   <g>
-    <circle cx="455" cy="285" r="37.800000000000004" fill="url(#glow-0)" class="breathe d0" />
+    <circle cx="455" cy="285" r="47.7" fill="url(#glow-0)" class="breathe d0" />
     <path d="M427.1 285H482.9M455 257.1V312.9" stroke="#ffe7c2" stroke-opacity="0.45" stroke-width="0.8" />
     <circle cx="455" cy="285" r="9.0" fill="#ffe7c2" />
-    <circle cx="745" cy="130" r="31.5" fill="url(#glow-1)" class="breathe d1" />
-    <circle cx="745" cy="130" r="5.62" fill="#cfe0ff" />
+    <circle cx="745" cy="130" r="23.25" fill="url(#glow-1)" class="breathe d1" />
+    <circle cx="745" cy="130" r="4.5" fill="#cfe0ff" />
     <circle cx="890" cy="320" r="8" fill="none" stroke="#7d89a6" stroke-width="1.2" stroke-dasharray="2 3" class="pulse" />
   </g>
 
@@ -247,11 +247,11 @@
     <text x="50" y="396" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#7d89a6">Last push</text>
     <circle cx="120" cy="392" r="5.0" fill="#c3cbe0" />
     <text x="130" y="396" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#7d89a6">this week</text>
-    <circle cx="199.6" cy="392" r="4.5" fill="#c3cbe0" />
+    <circle cx="199.6" cy="392" r="4.0" fill="#c3cbe0" />
     <text x="209.6" y="396" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#7d89a6">this month</text>
-    <circle cx="285.6" cy="392" r="3.75" fill="#c3cbe0" />
+    <circle cx="285.6" cy="392" r="3.0" fill="#c3cbe0" />
     <text x="295.6" y="396" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#7d89a6">quiet</text>
-    <circle cx="339.6" cy="392" r="3.0" fill="#c3cbe0" />
+    <circle cx="339.6" cy="392" r="2.25" fill="#c3cbe0" />
     <text x="349.6" y="396" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#7d89a6">dormant</text>
   </g>
 </svg>
