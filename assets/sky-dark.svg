@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-labelledby="title desc">
   <title id="title">Poutoo, star chart of projects</title>
   <desc id="desc">A constellation where each star is one of Poutoo's projects: Canopus, Vega and poutoo.dev.</desc>
-  <defs><radialGradient id="glow-0"><stop offset="0" stop-color="#ffe7c2" stop-opacity="0.7"/><stop offset="0.35" stop-color="#ffe7c2" stop-opacity="0.154"/><stop offset="1" stop-color="#ffe7c2" stop-opacity="0"/></radialGradient><radialGradient id="glow-1"><stop offset="0" stop-color="#cfe0ff" stop-opacity="0.7"/><stop offset="0.35" stop-color="#cfe0ff" stop-opacity="0.154"/><stop offset="1" stop-color="#cfe0ff" stop-opacity="0"/></radialGradient><radialGradient id="glow-2"><stop offset="0" stop-color="#ffe7c2" stop-opacity="0.7"/><stop offset="0.35" stop-color="#ffe7c2" stop-opacity="0.154"/><stop offset="1" stop-color="#ffe7c2" stop-opacity="0"/></radialGradient></defs>
+  <defs><radialGradient id="glow-0"><stop offset="0" stop-color="#ffe7c2" stop-opacity="0.35"/><stop offset="0.35" stop-color="#ffe7c2" stop-opacity="0.077"/><stop offset="1" stop-color="#ffe7c2" stop-opacity="0"/></radialGradient><radialGradient id="glow-1"><stop offset="0" stop-color="#cfe0ff" stop-opacity="0.7"/><stop offset="0.35" stop-color="#cfe0ff" stop-opacity="0.154"/><stop offset="1" stop-color="#cfe0ff" stop-opacity="0"/></radialGradient><radialGradient id="glow-2"><stop offset="0" stop-color="#ffe7c2" stop-opacity="0.7"/><stop offset="0.35" stop-color="#ffe7c2" stop-opacity="0.154"/><stop offset="1" stop-color="#ffe7c2" stop-opacity="0"/></radialGradient></defs>
   <style>
     .twinkle { animation: twinkle 4s ease-in-out infinite; }
     .breathe { animation: breathe 5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
@@ -217,9 +217,8 @@
   </g>
 
   <g>
-    <circle cx="455" cy="285" r="47.7" fill="url(#glow-0)" class="breathe d0" />
-    <path d="M427.1 285H482.9M455 257.1V312.9" stroke="#ffe7c2" stroke-opacity="0.45" stroke-width="0.8" />
-    <circle cx="455" cy="285" r="9.0" fill="#ffe7c2" />
+    <circle cx="455" cy="285" r="37.800000000000004" fill="url(#glow-0)" class="breathe d0" />
+    <circle cx="455" cy="285" r="7.2" fill="#ffe7c2" />
     <circle cx="745" cy="130" r="39.75000000000001" fill="url(#glow-1)" class="breathe d1" />
     <path d="M721.75 130H768.25M745 106.75V153.25" stroke="#cfe0ff" stroke-opacity="0.45" stroke-width="0.8" />
     <circle cx="745" cy="130" r="7.5" fill="#cfe0ff" />

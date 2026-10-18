@@ -217,8 +217,7 @@
   </g>
 
   <g>
-    <circle cx="455" cy="285" r="13.0" fill="none" stroke="#13213f" stroke-width="0.8" />
-    <circle cx="455" cy="285" r="9.0" fill="#13213f" />
+    <circle cx="455" cy="285" r="7.2" fill="#13213f" />
     <circle cx="745" cy="130" r="11.5" fill="none" stroke="#13213f" stroke-width="0.8" />
     <circle cx="745" cy="130" r="7.5" fill="#13213f" />
     <circle cx="600" cy="360" r="14.0" fill="none" stroke="#13213f" stroke-width="0.8" />
