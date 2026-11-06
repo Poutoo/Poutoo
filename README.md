@@ -1,15 +1,16 @@
 <a href="https://poutoo.dev">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/sky-dark.svg">
-    <img src="./assets/sky-light.svg" alt="Poutoo, star chart of projects: Canopus, Vega and Sirius" width="100%">
+    <img src="./assets/sky-light.svg" alt="Poutoo, star chart of projects: Canopus, Vega, Sirius and Atlas" width="100%">
   </picture>
 </a>
 
 | Star | Project | Stack |
 |---|---|---|
- ✦ [**poutoo.dev**](https://poutoo.dev) | My personal website, go check :3 | Next.js, Tailwind |
+| ✦ [**poutoo.dev**](https://poutoo.dev) | My personal website, go check :3 | Next.js, Tailwind |
 | ✦ [**Canopus**](https://github.com/Poutoo/Canopus) | Windows game optimizer, work in progress | WinUI 3, .NET 8 |
 | ✦ [**Vega**](https://github.com/Poutoo/Vega) | Universal CLI video and music downloader | Python |
+| ✦ [**Atlas**](https://github.com/Poutoo/vpsctl) | Desktop app to manage a Linux VPS over SSH: files, Docker, systemd, scripts | Tauri 2, Rust, Vue 3, TypeScript |
 
 <details>
 <summary><b>Tech stack</b></summary>

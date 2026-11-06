@@ -47,10 +47,13 @@ PROJECTS = [
          label="right", tint="warm"),
     dict(name="Next star", designation="", x=890, y=320, r=5,
          desc=["Being charted"], label="left", ghost=True),
+    dict(name="Atlas", designation="27 Tauri", repo="Poutoo/vpsctl", x=480, y=110, r=8,
+         desc=["Desktop app to manage", "a Linux VPS over SSH"],
+         label="right", tint="cool"),
 ]
 
 # Tracés de la constellation : paires d'index dans PROJECTS
-LINKS = [(0, 1), (0, 2), (1, 3)]
+LINKS = [(0, 1), (0, 2), (1, 3), (0, 4)]
 
 THEMES = {
     "dark": dict(
