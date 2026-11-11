@@ -220,8 +220,7 @@
   <g>
     <circle cx="455" cy="285" r="5.4" fill="#13213f" />
     <circle cx="745" cy="130" r="6.0" fill="#13213f" />
-    <circle cx="600" cy="360" r="14.0" fill="none" stroke="#13213f" stroke-width="0.8" />
-    <circle cx="600" cy="360" r="10.0" fill="#13213f" />
+    <circle cx="600" cy="360" r="8.0" fill="#13213f" />
     <circle cx="890" cy="320" r="8" fill="none" stroke="#8a95ad" stroke-width="1.2" stroke-dasharray="2 3" class="pulse" />
     <circle cx="480" cy="110" r="12.0" fill="none" stroke="#13213f" stroke-width="0.8" />
     <circle cx="480" cy="110" r="8.0" fill="#13213f" />
